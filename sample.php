@@ -5,11 +5,11 @@
 	$cough 	= array("OTC Robitussin Cough may help! Need doctor? Reply <coughdoctor>");
 	$cold = array("OTC Aspirin may help! Need doctor? Reply <colddoctor>");
 	$vomiting = array("OTC Pepto-Bismol may help! Need doctor? Reply <vomitingdoctor>");
-	$headachedoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
-	$stomachachedoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
-	$coughdoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
-	$colddoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
-	$vomitingdoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	$headachedoctor = array("Dr. Lorem Ipsum1 - Here is the address! Call at +1 xxx xxx xxxx");
+	$stomachachedoctor = array("Dr. Lorem Ipsum2 - Here is the address! Call at +1 xxx xxx xxxx");
+	$coughdoctor = array("Dr. Lorem Ipsum3 - Here is the address! Call at +1 xxx xxx xxxx");
+	$colddoctor = array("Dr. Lorem Ipsum4 - Here is the address! Call at +1 xxx xxx xxxx");
+	$vomitingdoctor = array("Dr. Lorem Ipsum5 - Here is the address! Call at +1 xxx xxx xxxx");
 	
 	
 	$headacheanswer   = 2;
