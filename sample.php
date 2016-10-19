@@ -1,35 +1,48 @@
 <?php
+	session_start();
     header("content-type: text/xml");
-	$headache 	= array(array("OTC Crocin may help",array("1: Doctor?","2: Hospital?")));
-	$stomachache = array(array("OTC Tylenol may help",array("1: Doctor?","2: Hospital?")));
-	$cough 	= array(array("OTC Robitussin Cough may help",array("1: Doctor?","2: Hospital?")));
-	$headacheanswer   = 2;
-	$stomachacheanswer = 2;
-	$coughanswer   = 2;
-    $quiz = array(
-	    "headache" => $headache,		// easy question and answer
-	    "stomachache" => $stomachache,	// medium question and answer
-	    "cough" => $cough			// hard question and answer
-	);
-	// $to 	= $_REQUEST['to'];
-	// $from   = $_REQUEST['from'];
-	$answer = $_REQUEST['Body'];
+
+	switch ($answer) {
+		case 'headache' : {
+			print('OTC Crocin may help!');
+			break;
+		case 'stomachache' : {
+			print('OTC Tylenol may help!');
+			break;
+		case 'cough' : {
+			print('OTC Robitussin Cough may help!');
+			break;
+		case 'cold' : {
+			print('OTC Aspirin may help!');
+			break;	
+		case 'vomiting' : {
+			print('OTC Pepto-Bismol may help!');
+			break;
+		case 'headache doctor' : {
+			print('Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx');
+			break;
+		case 'stomachache doctor' : {
+			print('Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx');
+			break;
+		case 'cough doctor' : {
+			print('Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx');
+			break;
+		case 'cold doctor' : {
+			print('Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx');
+			break;
+		case 'vomiting doctor' : {
+			print('Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx');
+			break;
+	}
+		
+		
+	
+	
+	$from   = $_POST['From'];
+	$answer = $_POST['Body'];
 	$reply  = array();
-	if (is_numeric($answer)) {
-		if($answer == 2){
-			$reply = 'Asrani';
-		}
-		else{
-			$reply = 'Wisrani';
-		}
-	}
-	else if(is_string($answer)){
-		array_push($reply, $quiz[$answer][0][0]);
-		foreach ($quiz[$answer][0][1] as $key => $value) {
-			array_push($reply, PHP_EOL);
-			array_push($reply, $value);
-		}
-	}
+		
+	
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 
