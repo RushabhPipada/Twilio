@@ -1,28 +1,31 @@
 <?php
     header("content-type: text/xml");
-	$headache 	= array(array("OTC Crocin may help",array("1: Doctor?","2: Hospital?")));
-	$stomachache = array(array("OTC Tylenol may help",array("1: Doctor?","2: Hospital?")));
-	$cough 	= array(array("OTC Robitussin Cough may help",array("1: Doctor?","2: Hospital?")));
+	$headache 	= array("OTC Crocin may help! Need doctor? Reply <headache doctor>");
+	$stomachache = array("OTC Tylenol may help! Need doctor? Reply <stomachache doctor>");
+	$cough 	= array("OTC Robitussin Cough may help! Need doctor? Reply <cough doctor");
+	$cold 	= array("OTC Aspirin may help! Need doctor? Reply <cold doctor>");
+	$vomiting 	= array("OTC Pepto-Bismol may help! Need doctor? Reply <vomiting doctor>");
+	
 	$headacheanswer   = 2;
 	$stomachacheanswer = 2;
 	$coughanswer   = 2;
     $quiz = array(
-	    "headache" => $headache,		// easy question and answer
-	    "stomachache" => $stomachache,	// medium question and answer
-	    "cough" => $cough			// hard question and answer
+	    "headache" => $headache,		
+	    "stomachache" => $stomachache,	
+	    "cough" => $cough			
 	);
 	// $to 	= $_REQUEST['to'];
 	// $from   = $_REQUEST['from'];
 	$answer = $_REQUEST['Body'];
 	$reply  = array();
-	if (is_numeric($answer)) {
-		if($answer == 2){
-			$reply = 'Asrani';
+	
+		if($answer == "headache"){
+			$reply = 'lorem';
 		}
 		else{
-			$reply = 'Wisrani';
+			$reply = 'ipsum';
 		}
-	}
+	
 	else if(is_string($answer)){
 		array_push($reply, $quiz[$answer][0][0]);
 		foreach ($quiz[$answer][0][1] as $key => $value) {
