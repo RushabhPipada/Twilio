@@ -1,15 +1,31 @@
 <?php
     header("content-type: text/xml");
-	$headache 	= array("crap");
-	$stomachache = array(array("OTC Tylenol may help",array("1: Doctor?","2: Hospital?")));
-	$cough 	= array(array("OTC Robitussin Cough may help",array("1: Doctor?","2: Hospital?")));
+	$headache 	= array("OTC Crocin may help! Need doctor? Reply <headachedoctor>");
+	$stomachache = array("OTC Tylenol may help! Need doctor? Reply <stomachachedoctor>");
+	$cough 	= array("OTC Robitussin Cough may help! Need doctor? Reply <coughdoctor>");
+	$cold = array("OTC Aspirin may help! Need doctor? Reply <colddoctor>");
+	$vomiting = array("OTC Pepto-Bismol may help! Need doctor? Reply <vomitingdoctor>");
+	$headachedoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	$stomachachedoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	$coughdoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	$colddoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	$vomitingdoctor = array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx");
+	
+	
 	$headacheanswer   = 2;
 	$stomachacheanswer = 2;
 	$coughanswer   = 2;
     $quiz = array(
-	    "headache" => $headache,		// easy question and answer
-	    "stomachache" => $stomachache,	// medium question and answer
-	    "cough" => $cough			// hard question and answer
+	    "headache" => $headache,	
+	    "stomachache" => $stomachache,	
+	    "cough" => $cough,
+	    "cold" => $cold,
+	    "vomiting" => $vomiting,
+	    "headachedoctor" => $headachedoctor,
+	    "stomachachedoctor" => $stomachachedoctor,
+	    "coughdoctor" => $coughdoctor,
+	    "colddoctor" => $colddoctor,
+	    "vomiting" => $vomitingdoctor
 	);
 	// $to 	= $_REQUEST['to'];
 	// $from   = $_REQUEST['from'];
