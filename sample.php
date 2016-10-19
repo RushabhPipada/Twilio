@@ -1,12 +1,11 @@
 <?php
     header("content-type: text/xml");
-	$headache 	= array("OTC Crocin may help! Need doctor? Reply <headache doctor>");
-	$stomachache = array("OTC Tylenol may help! Need doctor? Reply <stomachache doctor>");
-	$cough 	= array("OTC Robitussin Cough may help! Need doctor? Reply <cough doctor>");
-	$cold 	= array("OTC Aspirin may help! Need doctor? Reply <cold doctor>");
-	$vomiting 	= array("OTC Pepto-Bismol may help! Need doctor? Reply <vomiting doctor>");
-	
-	
+	$headache 	= array(array("OTC Crocin may help!",array("Need doctor? Reply <headache doctor>")));
+	$stomachache = array(array("OTC Tylenol may help!",array("Need doctor? Reply <headache doctor>")));
+	$cough 	= array(array("OTC Robitussin Cough may help!",array("Need doctor? Reply <headache doctor>")));
+	$headacheanswer   = 2;
+	$stomachacheanswer = 2;
+	$coughanswer   = 2;
     $quiz = array(
 	    "headache" => $headache,		// easy question and answer
 	    "stomachache" => $stomachache,	// medium question and answer
@@ -16,14 +15,14 @@
 	// $from   = $_REQUEST['from'];
 	$answer = $_REQUEST['Body'];
 	$reply  = array();
-	
-		if($answer == "headache"){
-			$reply = 'lorem';
+	if (is_numeric($answer)) {
+		if($answer == 2){
+			$reply = 'Asrani';
 		}
 		else{
-			$reply = 'ipsum';
+			$reply = 'Wisrani';
 		}
-	
+	}
 	else if(is_string($answer)){
 		array_push($reply, $quiz[$answer][0][0]);
 		foreach ($quiz[$answer][0][1] as $key => $value) {
