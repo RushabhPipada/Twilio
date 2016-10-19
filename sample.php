@@ -1,8 +1,8 @@
 <?php
     header("content-type: text/xml");
-	$headache 	= array(array("OTC Crocin may help!",array("Need doctor? Reply <headache doctor>")));
-	$stomachache = array(array("OTC Tylenol may help!",array("Need doctor? Reply <headache doctor>")));
-	$cough 	= array(array("OTC Robitussin Cough may help!",array("Need doctor? Reply <headache doctor>")));
+	$headache 	= array(array("OTC Crocin may help",array("1: Doctor?","2: Hospital?")));
+	$stomachache = array(array("OTC Tylenol may help",array("1: Doctor?","2: Hospital?")));
+	$cough 	= array(array("OTC Robitussin Cough may help",array("1: Doctor?","2: Hospital?")));
 	$headacheanswer   = 2;
 	$stomachacheanswer = 2;
 	$coughanswer   = 2;
