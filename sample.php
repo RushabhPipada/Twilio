@@ -1,115 +1,37 @@
 <?php
-	session_start();
     header("content-type: text/xml");
-	$question 	= array(
-						0  => array("OTC Crocin may help! Need doctor? Reply <headache doctor> "),
-						1  => array("OTC Tylenol may help! Need doctor? Reply <headache doctor> "),
-						2  => array("OTC Robitussin Cough may help! Need doctor? Reply <headache doctor> "),
-						3  => array("OTC Aspirin may help! Need doctor? Reply <headache doctor> "),
-						4  => array("OTC Pepto-Bismol may help! Need doctor? Reply <headache doctor> "),
-						5  => array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx"),
-						6  => array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx"),
-						7  => array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx"),
-						8  => array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx"),
-						9  => array("Dr. Lorem Ipsum - Here is the address! Call at +1 xxx xxx xxxx"),
-						10  => array("Enter valid inquiry"),
-						);
+	$headache 	= array("OTC Crocin may help! Need doctor? Reply <headache doctor>");
+	$stomachache = array("OTC Tylenol may help! Need doctor? Reply <stomachache doctor>");
+	$cough 	= array("OTC Robitussin Cough may help! Need doctor? Reply <cough doctor");
+	$cold 	= array("OTC Aspirin may help! Need doctor? Reply <cold doctor>");
+	$vomiting 	= array("OTC Pepto-Bismol may help! Need doctor? Reply <vomiting doctor>");
 	
-	$from   = $_POST['From'];
-	$answer = $_POST['Body'];
+	$headacheanswer   = 2;
+	$stomachacheanswer = 2;
+	$coughanswer   = 2;
+    $quiz = array(
+	    "headache" => $headache,		// easy question and answer
+	    "stomachache" => $stomachache,	// medium question and answer
+	    "cough" => $cough			// hard question and answer
+	);
+	// $to 	= $_REQUEST['to'];
+	// $from   = $_REQUEST['from'];
+	$answer = $_REQUEST['Body'];
 	$reply  = array();
-	if ($answer == 'headache') 
-		
-			$reply = printqt($question[0][1]);
-			
-		elseif ($answer == "stomachache") 
-		
-			$reply = printqt($question[1][1]);
-		
-		elseif ($answer == "cough") 
-		
-			$reply = printqt($question[2][1]);
-		
-		elseif ($answer == "cold") 
-		
-			$reply = printqt($question[3][1]);
-			
-		elseif ($answer == "vomiting") 
-		
-			$reply = printqt($question[4][1]);
-			
-		elseif ($answer == "headache doctor") 
-		
-			$reply = printqt($question[5][1]);
-		
-		elseif ($answer == "stomachache doctor") 
-		
-			$reply = printqt($question[6][1]);
-		
-		elseif ($answer == "cough doctor") 
-		
-			$reply = printqt($question[7][1]);
-			
-		elseif ($answer == "cold doctor") 
-		
-			$reply = printqt($question[8][1]);
-		
-		elseif ($answer == "vomiting doctor") 
-		
-			$reply = printqt($question[9][1]);
-			
-		else{
-		$reply = printqt($question[10][1]);
-		}
-		
-		
 	
-	function printqt($answer){
-		if ($answer == 'headache') 
-		
-			$makereply['one'] = $question[0][1];
-			
-		elseif ($answer == 'stomachache') 
-		
-			$makereply['two'] = $question[1][1];
-		
-		elseif ($answer == 'cough') 
-		
-			$makereply['three'] = $question[2][1];
-		
-		elseif ($answer == 'cold') 
-		
-			$makereply['four']= $question[3][1];
-			
-		elseif ($answer == 'vomiting') 
-		
-			$makereply['five'] = $question[4][1];
-			
-		elseif ($answer == 'headache doctor') 
-		
-			$makereply['six'] = $question[5][1];
-		
-		elseif ($answer == 'stomachache doctor') 
-		
-			$makereply['seven'] = $question[6][1];
-		
-		elseif ($answer == 'cough doctor') 
-		
-			$makereply['eight'] = $question[7][1];
-			
-		elseif ($answer == 'cold doctor') 
-		
-			$makereply['nine'] = $question[8][1];
-		
-		elseif ($answer == 'vomiting doctor') 
-		
-			$makereply['ten'] = $question[9][1];
-			
-		else{
-		$makereply['eleven'] = $question[10][1];
+		if($answer == "headache"){
+			$reply = 'lorem';
 		}
-		
-		return $makereply;
+		else{
+			$reply = 'ipsum';
+		}
+	
+	else if(is_string($answer)){
+		array_push($reply, $quiz[$answer][0][0]);
+		foreach ($quiz[$answer][0][1] as $key => $value) {
+			array_push($reply, PHP_EOL);
+			array_push($reply, $value);
+		}
 	}
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
