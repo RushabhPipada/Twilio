@@ -65,8 +65,50 @@
 		
 	
 	function printqt($answer){
+		if ($answer == 'headache') 
 		
-			$makereply['qt'] = $question[0][1] : 
+			$makereply['one'] = $question[0][1];
+			
+		elseif ($answer == 'stomachache') 
+		
+			$makereply['two'] = $question[1][1];
+		
+		elseif ($answer == 'cough') 
+		
+			$makereply['three'] = $question[2][1];
+		
+		elseif ($answer == 'cold') 
+		
+			$makereply['four']= $question[3][1];
+			
+		elseif ($answer == 'vomiting') 
+		
+			$makereply['five'] = $question[4][1];
+			
+		elseif ($answer == 'headache doctor') 
+		
+			$makereply['six'] = $question[5][1];
+		
+		elseif ($answer == 'stomachache doctor') 
+		
+			$makereply['seven'] = $question[6][1];
+		
+		elseif ($answer == 'cough doctor') 
+		
+			$makereply['eight'] = $question[7][1];
+			
+		elseif ($answer == 'cold doctor') 
+		
+			$makereply['nine'] = $question[8][1];
+		
+		elseif ($answer == 'vomiting doctor') 
+		
+			$makereply['ten'] = $question[9][1];
+			
+		else{
+		$makereply['eleven'] = $question[10][1];
+		}
+		
 		return $makereply;
 	}
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
