@@ -22,39 +22,39 @@
 		
 			$reply = printqt($question[0][1]);
 			
-		elseif ($answer == 'stomachache') 
+		elseif ($answer == "stomachache") 
 		
 			$reply = printqt($question[1][1]);
 		
-		elseif ($answer == 'cough') 
+		elseif ($answer == "cough") 
 		
 			$reply = printqt($question[2][1]);
 		
-		elseif ($answer == 'cold') 
+		elseif ($answer == "cold") 
 		
 			$reply = printqt($question[3][1]);
 			
-		elseif ($answer == 'vomiting') 
+		elseif ($answer == "vomiting") 
 		
 			$reply = printqt($question[4][1]);
 			
-		elseif ($answer == 'headache doctor') 
+		elseif ($answer == "headache doctor") 
 		
 			$reply = printqt($question[5][1]);
 		
-		elseif ($answer == 'stomachache doctor') 
+		elseif ($answer == "stomachache doctor") 
 		
 			$reply = printqt($question[6][1]);
 		
-		elseif ($answer == 'cough doctor') 
+		elseif ($answer == "cough doctor") 
 		
 			$reply = printqt($question[7][1]);
 			
-		elseif ($answer == 'cold doctor') 
+		elseif ($answer == "cold doctor") 
 		
 			$reply = printqt($question[8][1]);
 		
-		elseif ($answer == 'vomiting doctor') 
+		elseif ($answer == "vomiting doctor") 
 		
 			$reply = printqt($question[9][1]);
 			
