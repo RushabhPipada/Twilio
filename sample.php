@@ -1,6 +1,6 @@
 <?php
     header("content-type: text/xml");
-	$headache 	= array(array("OTC Crocin may help",array("1: Doctor?","2: Hospital?")));
+	$headache 	= array("crap");
 	$stomachache = array(array("OTC Tylenol may help",array("1: Doctor?","2: Hospital?")));
 	$cough 	= array(array("OTC Robitussin Cough may help",array("1: Doctor?","2: Hospital?")));
 	$headacheanswer   = 2;
@@ -24,8 +24,8 @@
 		}
 	}
 	else if(is_string($answer)){
-		array_push($reply, $quiz[$answer][0][0]);
-		foreach ($quiz[$answer][0][1] as $key => $value) {
+		array_push($reply, $quiz[$answer][0]);
+		foreach ($quiz[$answer][0] as $key => $value) {
 			array_push($reply, PHP_EOL);
 			array_push($reply, $value);
 		}
