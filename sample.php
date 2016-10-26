@@ -26,6 +26,7 @@
 	);
 	
 	$answer = $_REQUEST['Body'];
+	$answer = strtolower($answer);
 	$reply  = array();
 	
 	if(is_string($answer)){
